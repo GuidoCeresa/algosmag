@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fdc5e53e-f137-4119-9eb2-a59277414792" name="Default" comment="" />
+    <ignored path="algosmag.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$USER_HOME$/.grails/" />
+    <file path="/Dummy.txt" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557457353" ignored="false" />
+    <file path="/Categoria.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373862157625" ignored="false" />
+    <file path="/Articolo.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557314169" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/categoria/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557217387" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/categoria/_form.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557217387" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/categoria/edit.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557217387" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/categoria/show.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557217387" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/categoria/create.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557217387" ignored="false" />
+    <file path="$PROJECT_DIR$/test/unit/it/algos/algosmag/ArticoloControllerTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373862969247" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/it/algos/algos/AlgosControllerScaffolding" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374520767368" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/taglib/algos/AlgosTagLib.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374392435300" ignored="false" />
+    <file path="/AlgosTagLib.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374392434706" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/src/groovy/it/algos/algos/LibHtml.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872053136" ignored="false" />
+    <file path="/LibHtml.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872051794" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872815941" ignored="false" />
+    <file path="/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557163495" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/domain/algos/Prova.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872826736" ignored="false" />
+    <file path="/Prova.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872825828" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova/create.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872815941" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova/_form.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872815941" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova/edit.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872815942" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova/show.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1373872815942" ignored="false" />
+    <file path="$PROJECT_DIR$/web-app/WEB-INF/applicationContext.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374163501435" ignored="false" />
+    <file path="$PROJECT_DIR$/test/unit/it/algos/algosmag/UnitaTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374163677211" ignored="false" />
+    <file path="/Unita.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374163770417" ignored="false" />
+    <file path="/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471362427" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/scripts/_Install.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507096433" ignored="false" />
+    <file path="/_Install.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374506635161" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/services/it/algos/algosvers/VersioneService.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374165702936" ignored="false" />
+    <file path="/VersioneService.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374165702936" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374210987534" ignored="false" />
+    <file path="/a.dummy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557454671" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/Pippoz.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374169751962" ignored="false" />
+    <file path="/Pippoz.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374169751962" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/AlgosversGrailsPlugin.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507107865" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/plugin.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507120774" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374255703266" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/conf/Pluto.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374208921906" ignored="false" />
+    <file path="/Pluto.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374208921906" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/Pippox.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209004601" ignored="false" />
+    <file path="/Pippox.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209986788" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/.idea/workspace.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507134113" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/README" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209388064" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/Pippo.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209432501" ignored="false" />
+    <file path="/Pippo.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209432501" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/BootStrap.java" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209518347" ignored="false" />
+    <file path="/BootStrap.java" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374209486487" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/VersioneBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374423933019" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/conf/VersioneBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374255188466" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374500387349" ignored="false" />
+    <file path="/VersioneBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374423910643" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374216968242" ignored="false" />
+    <file path="$PROJECT_DIR$/../algosvers/algosvers-grailsPlugins.iml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374217097728" ignored="false" />
+    <file path="/application.properties" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374217319412" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/conf/VersioneBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471374798" ignored="false" />
+    <file path="$PROJECT_DIR$/../algospref/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374237879397" ignored="false" />
+    <file path="/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374245423891" ignored="false" />
+    <file path="$PROJECT_DIR$/../algospref/AlgosprefGrailsPlugin.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374237994063" ignored="false" />
+    <file path="$PROJECT_DIR$/../algospref/.idea/workspace.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374238081463" ignored="false" />
+    <file path="$PROJECT_DIR$/../algospref/plugin.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374238067806" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374499775093" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/AlgoslogoGrailsPlugin.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374506855473" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/plugin.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374506873651" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/.idea/workspace.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507340129" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/algoslogo.iml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374245283384" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslib/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374245423891" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslib/.idea/workspace.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374423085417" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/scripts/_Install.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507343170" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/AlgosGrailsPlugin.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374520594634" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/plugin.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374553518254" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374255188466" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/conf/UrlMappings.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374255188466" ignored="false" />
+    <file path="/AlgosGrailsPlugin.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374255602990" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/conf/ExportBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374255748867" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/domain/untitled6/Alla.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374301254612" ignored="false" />
+    <file path="/Alla.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374301254612" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/src/templates/scaffolding/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374301597530" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/views/alla/_form.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374301619802" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/views/alla/show.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374301619802" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/controllers/untitled6/AllaController.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374313835564" ignored="false" />
+    <file path="/AllaController.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374313774126" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/src/templates/scaffolding/Controller.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314470627" ignored="false" />
+    <file path="/Controller.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314026196" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/domain/untitled6/Rotta.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314207523" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/test/unit/untitled6/RottaTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314129024" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/grails-app/controllers/untitled6/RottaController.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314233114" ignored="false" />
+    <file path="/Rotta.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314203907" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled6/test/unit/untitled6/RottaControllerTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374314233114" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/src/templates/scaffolding/Controller.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374520810870" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/controllers/algos/Prova2Controller.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374322776329" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/src/templates/artifacts/DomainClass.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374322955864" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/domain/algos/Prova2.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323033842" ignored="false" />
+    <file path="/Prova2.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323033842" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/src/templates/scaffolding/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323280370" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova2/create.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323299892" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova2/show.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323299892" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova2/edit.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323299892" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova2/_form.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323299892" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/views/prova2/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323299892" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/conf/ExportBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471383554" ignored="false" />
+    <file path="/ExportBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374521015054" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/it/algos/algos/AlgosExportBootStrap" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323504831" ignored="false" />
+    <file path="/AlgosExportBootStrap" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374323504831" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled7/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374330774143" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled7/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374330774143" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled7/grails-app/conf/UrlMappings.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374330774143" ignored="false" />
+    <file path="/Prima.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374331320339" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled7/grails-app/domain/untitled7/Prima.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374331320339" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/it/algos/algos/Algoslist" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374331511724" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled8/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374331947471" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled8/grails-app/conf/UrlMappings.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374331947471" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled8/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374331947471" ignored="false" />
+    <file path="/Fattura.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374332001916" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled8/grails-app/domain/untitled8/Fattura.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374332001916" ignored="false" />
+    <file path="$PROJECT_DIR$/test/unit/it/algos/algosmag/CategoriaControllerTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374392049979" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/unita/show.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557234453" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/unita/list.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557234453" ignored="false" />
+    <file path="$PROJECT_DIR$/grails-app/views/unita/_form.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557234453" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/controllers/algos/ProvaController.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374520509931" ignored="false" />
+    <file path="/ProvaController.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374474173136" ignored="false" />
+    <file path="/ArticoloController.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374392686335" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/it/algos/algos/AlgosBootStrap" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471388671" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471454586" ignored="false" />
+    <file path="$PROJECT_DIR$/../untitled8/grails-app/conf/VersioneBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374423842725" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/scripts/_install.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374424149752" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/scripts/_Install.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374506842249" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/grails-app/conf/LogoBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374472547654" ignored="false" />
+    <file path="/MagazzinoBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374470303280" ignored="false" />
+    <file path="$PROJECT_DIR$/../myvitaback/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471362120" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/conf/BootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374471379196" ignored="false" />
+    <file path="/LogoBootStrap.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374472248703" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/grails-app/services/it/algos/algoslogo/EventoService.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374499484449" ignored="false" />
+    <file path="/EventoService.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374473782926" ignored="false" />
+    <file path="/fragment.java" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374497576448" ignored="false" />
+    <file path="$PROJECT_DIR$/../algoslogo/test/unit/it/algos/algoslogo/EventoServiceTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374473752325" ignored="false" />
+    <file path="/EventoServiceTests.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374473751332" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/jobs/RefreshJob.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374497545238" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/jobs/it/algos/algos/RefreshJob/groovy.java" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374497530003" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/jobs/it/algos/algos/RefreshJob.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374502245604" ignored="false" />
+    <file path="/RefreshJob.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374499379574" ignored="false" />
+    <file path="$PROJECT_DIR$/../webambulanze/grails-app/conf/BuildConfig.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374499864090" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/it/algos/algos/AlgosBuildConfig" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374500396904" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/conf/Config.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507779145" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/README" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507490776" ignored="false" />
+    <file path="/README" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507461665" ignored="false" />
+    <file path="$PROJECT_DIR$/../algos/grails-app/it/algos/algos/AlgosConfig" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374502225190" ignored="false" />
+    <file path="$PROJECT_DIR$/src/templates/artifacts/hibernate.cfg.xml" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374506990151" ignored="false" />
+    <file path="/Config.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374507815133" ignored="false" />
+    <file path="$PROJECT_DIR$/src/templates/artifacts/DomainClass.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374553559156" ignored="false" />
+    <file path="/index.gsp" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374556585732" ignored="false" />
+    <file path="/UrlMappings.groovy" changelist="fdc5e53e-f137-4119-9eb2-a59277414792" time="1374557079641" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="algosmag" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="BuildConfig.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="58" selection-start="2912" selection-end="2912" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="117" column="49" selection-start="3318" selection-end="3318" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UrlMappings.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="14" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/scaffolding/list.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="59" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Articolo.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Articolo.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="80" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.025252525">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitaController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/UnitaController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="107" column="66" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Categoria.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Categoria.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="6" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Unita.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Unita.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="61" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriaController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/CategoriaController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticoloController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/ArticoloController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="119" column="63" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/grails-app/conf/MagazzinoBootStrap.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/VersioneBootStrap.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/jobs/RefreshJob.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/ArticoloController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/UnitaController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/ExportBootStrap.groovy" />
+        <option value="$PROJECT_DIR$/src/templates/scaffolding/Controller.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/CategoriaController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
+        <option value="$PROJECT_DIR$/src/templates/scaffolding/list.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Categoria.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Articolo.groovy" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="73" />
+    <option name="y" value="49" />
+    <option name="width" value="1317" />
+    <option name="height" value="828" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scaffolding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="articolo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algosmag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RunManager" selected="Grails.Algosmag">
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Algosmag" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="algosmag" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <RunnerSettings RunnerId="GrailsMavenDebuggerRunner">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="GrailsMavenDebuggerRunner" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Grails.Algosmag" />
+    </list>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdc5e53e-f137-4119-9eb2-a59277414792" name="Default" comment="" />
+      <created>1373861811334</created>
+      <updated>1373861811334</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="73" y="49" width="1317" height="828" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33050847" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940991" sideWeight="0.28672317" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940991" sideWeight="0.6723164" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32768363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909605" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/grails-app/jobs/RefreshJob.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/VersioneBootStrap.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="61" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/LogoBootStrap.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="121" selection-start="95" selection-end="95" vertical-scroll-proportion="0.066176474" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/ExportBootStrap.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="528" selection-end="528" vertical-scroll-proportion="0.1985294" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="0" selection-start="4096" selection-end="4096" vertical-scroll-proportion="2.8456376" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/ArticoloController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="63" selection-start="4708" selection-end="4708" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/UnitaController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="66" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/CategoriaController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/scaffolding/Controller.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="50" selection-start="1335" selection-end="1335" vertical-scroll-proportion="1.3138686" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="58" selection-start="2912" selection-end="2912" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="49" selection-start="3318" selection-end="3318" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="14" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/scaffolding/list.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="59" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Categoria.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="6" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Unita.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="61" selection-start="732" selection-end="732" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/it/algos/algosmag/Articolo.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="80" selection-start="1756" selection-end="1756" vertical-scroll-proportion="0.025252525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="grailsSettings">
+    <option name="map">
+      <map>
+        <entry key="algosmag">
+          <value>
+            <GrailsSettings>
+              <option name="buildConfigCrc" value="697251378" />
+              <option name="pluginDependenciesCrc" value="-1219745956" />
+              <option name="properties">
+                <map>
+                  <entry key="grails.global.plugins.dir" value="$USER_HOME$/.grails/2.2.3/global-plugins" />
+                  <entry key="grails.project.plugins.dir" value="$USER_HOME$/.grails/2.2.3/projects/Magazzino/plugins" />
+                  <entry key="grails.project.work.dir" value="$USER_HOME$/.grails/2.2.3/projects/Magazzino" />
+                  <entry key="grails.work.dir" value="$USER_HOME$/.grails/2.2.3" />
+                </map>
+              </option>
+            </GrailsSettings>
+          </value>
+        </entry>
+        <entry key="algosmag-grailsPlugins">
+          <value>
+            <GrailsSettings />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>grails-2.2.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>algosmag</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+
