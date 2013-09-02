@@ -22,7 +22,7 @@ class Articolo {
     String descrizione
     int prezzoAcquisto
     int prezzoVendita
-    Unita unitaDiMisura
+    Unita unitaDiMisura  =null
     int quantita
     int scortaMinima
     boolean sottoscorta
@@ -35,7 +35,7 @@ class Articolo {
      * la possibilità di avere valori nulli, di default è false
      */
     static constraints = {
-        categoria(nullable: false, blank: false)
+        categoria(nullable: true, blank: true)
         codice(nullable: false, blank: false, unique: true)
         nome(nullable: false, blank: false)
         descrizione(widget: 'textarea', nullable: true, blank: true)

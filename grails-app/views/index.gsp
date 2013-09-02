@@ -52,7 +52,10 @@
     }
 
     #page-body {
-        margin: 2em 1em 1.25em 18em;
+        margin-top: 2em;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
     }
 
     h2 {
@@ -95,46 +98,16 @@
 <body>
 <a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-<div id="status" role="complementary">
-    <h1>Application Status</h1>
-    <ul>
-        <li>App version: <g:meta name="app.version"/></li>
-        <li>Grails version: <g:meta name="app.grails.version"/></li>
-        <li>Groovy version: ${GroovySystem.getVersion()}</li>
-        <li>JVM version: ${System.getProperty('java.version')}</li>
-        <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-        <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-        <li>Domains: ${grailsApplication.domainClasses.size()}</li>
-        <li>Services: ${grailsApplication.serviceClasses.size()}</li>
-        <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-    </ul>
-
-    <h1>Plugins installati</h1>
-    <ul>
-        <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-            <li>${plugin.name} - ${plugin.version}</li>
-        </g:each>
-    </ul>
-</div>
-
 <div id="page-body" role="main">
-    <h1>Benvenuto in Algos</h1>
+    <h1>Benvenuto in ${grailsApplication.metadata.'app.name'}</h1>
 
     <div id="controller-list" role="navigation">
         <h2>Moduli disponibili:</h2>
-        <g:if test="${application.mostraTuttiControlli}">
-            <ul>
-                <g:each var="c" in="${grailsApplication.controllerClasses.findAll { it.fullName != 'Dbdoc' }}">
-                    <li class="controller"><g:link
-                            controller="${c.logicalPropertyName}">${c.getName()}</g:link></li>
-                </g:each>
-            </ul>
-        </g:if>
-        <g:else>
-            <li class="controller"><g:link controller="Unita">Unità di misura</g:link></li>
-            <li class="controller"><g:link controller="Categoria">Categorie di articoli</g:link></li>
-            <li class="controller"><g:link controller="Articolo">Articoli</g:link></li>
-        </g:else>
+        <ul>
+            <g:each var="c" in="${grailsApplication.controllerClasses.findAll { it.fullName != 'grails.plugin.databasemigration.DbdocController' }}">
+                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.getName()}</g:link></li>
+            </g:each>
+        </ul>
     </div>
 </div>
 </body>

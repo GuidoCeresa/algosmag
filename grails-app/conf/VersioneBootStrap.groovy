@@ -5,9 +5,12 @@ class VersioneBootStrap {
     def versioneService
 
     //--metodo invocato direttamente da Grails
-    //--tutte le aggiunte, modifiche, patch e nuove croci vengono inserite con una versione
+    //--tutte le aggiunte, modifiche e patch vengono inserite con una versione
     //--l'ordine di inserimento è FONDAMENTALE
     def init = { servletContext ->
+        //--controllo del flusso
+        log.debug 'init'
+
         //--prima installazione del programma
         if (versioneService && versioneService.installaVersione(1)) {
             versioneService.newVersione('Applicazione', 'Installazione iniziale')
@@ -17,4 +20,4 @@ class VersioneBootStrap {
     def destroy = {
     }// fine della closure
 
-}// fine della classe di tipo BootStrap
+}// fine della classe

@@ -30,6 +30,9 @@
         <li><a class="home" href="\${createLink(uri: '/home')}"><g:message code="default.home.label" default="Home"/></a></li>
         <li><g:link class="create" action="create"><g:message code="${domainClass.propertyName}.new.label"
                                                               args="[entityName]" default="Nuovo"/></g:link></li>
+        <g:if test="\${menuExtra}">
+            <algos:menuExtra campiExtra="\${menuExtra}"> </algos:menuExtra>
+        </g:if>
     </ul>
 </div>
 
@@ -50,7 +53,7 @@
                 props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) && it.type != null && !Collection.isAssignableFrom(it.type) }
                 Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
                 props.eachWithIndex { p, i ->
-                    if (i < 6) {
+                    if (i < 8) {
                         if (p.isAssociation()) { %>
                 <th><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}"/></th>
                 <% } else { %>
@@ -74,7 +77,7 @@
             <g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
                 <tr class="\${(i % 2) == 0 ? 'even' : 'odd'}">
                     <% props.eachWithIndex { p, i ->
-                        if (i < 6) {
+                        if (i < 8) {
                             if (p.type == Boolean || p.type == boolean) { %>
                     <td><g:formatBoolean boolean="\${${propertyName}.${p.name}}"/></td>
                     <% } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
@@ -90,14 +93,14 @@
         </g:else>
         </tbody>
     </table>
+    <div class="pagination">
+        <g:paginate total="\${${propertyName}Total}"/>
+    </div>
     <g:if test="\${application.usaExport}">
         <div class="buttons">
             <export:formats/>
         </div>
     </g:if>
-    <div class="pagination">
-        <g:paginate total="\${${propertyName}Total}"/>
-    </div>
 </div>
 </body>
 </html>

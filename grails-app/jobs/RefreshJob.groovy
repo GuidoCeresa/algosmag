@@ -1,8 +1,14 @@
+
+
 import it.algos.algoslib.LibGrails
 import it.algos.algoslib.LibTesto
 import it.algos.algoslogo.Logo
 
 class RefreshJob {
+
+    //--delay iniziale
+    // execute job 1 minute after start
+    public static int DELAY = 1000 * 60
 
     //--codifica della frequenza
     // execute job once in 30 minutes
@@ -13,7 +19,7 @@ class RefreshJob {
     def mailService
 
     static triggers = {
-        simple startDelay: 1000, repeatInterval: FREQUENZA
+        simple startDelay: DELAY, repeatInterval: FREQUENZA
     }// fine del metodo statico
 
     def execute() {

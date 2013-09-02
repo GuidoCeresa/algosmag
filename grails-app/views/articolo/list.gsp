@@ -30,6 +30,9 @@
         <li><a class="home" href="${createLink(uri: '/home')}"><g:message code="default.home.label" default="Home"/></a></li>
         <li><g:link class="create" action="create"><g:message code="articolo.new.label"
                                                               args="[entityName]" default="Nuovo"/></g:link></li>
+        <g:if test="${menuExtra}">
+            <algos:menuExtra menuExtra="${menuExtra}"> </algos:menuExtra>
+        </g:if>
     </ul>
 </div>
 
@@ -62,6 +65,11 @@
                 
                 <g:sortableColumn property="prezzoVendita"
                                   title="${message(code: 'articolo.prezzoVendita.label', default: 'Prezzo Vendita')}"/>
+                
+                <th><g:message code="articolo.unitaDiMisura.label" default="Unita Di Misura"/></th>
+                
+                <g:sortableColumn property="quantita"
+                                  title="${message(code: 'articolo.quantita.label', default: 'Quantita')}"/>
                 
             </tr>
         </g:else>
@@ -96,19 +104,25 @@
                     <td><g:link action="show"
                                 id="${articoloInstance.id}">${fieldValue(bean: articoloInstance, field: "prezzoVendita")}</g:link></td>
                     
+                    <td><g:link action="show"
+                                id="${articoloInstance.id}">${fieldValue(bean: articoloInstance, field: "unitaDiMisura")}</g:link></td>
+                    
+                    <td><g:link action="show"
+                                id="${articoloInstance.id}">${fieldValue(bean: articoloInstance, field: "quantita")}</g:link></td>
+                    
                 </tr>
             </g:each>
         </g:else>
         </tbody>
     </table>
+    <div class="pagination">
+        <g:paginate total="${articoloInstanceTotal}"/>
+    </div>
     <g:if test="${application.usaExport}">
         <div class="buttons">
             <export:formats/>
         </div>
     </g:if>
-    <div class="pagination">
-        <g:paginate total="${articoloInstanceTotal}"/>
-    </div>
 </div>
 </body>
 </html>

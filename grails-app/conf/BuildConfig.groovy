@@ -15,7 +15,6 @@ grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
-grails.project.war.file = "target/${appName}.war"
 
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -57,7 +56,7 @@ grails.project.dependency.resolution = {
     }// fine della closure dependencies
 
     plugins {
-        // obbligatori
+        //--sempre presenti
         build ":tomcat:$grailsVersion"
         runtime ":hibernate:$grailsVersion"
         build ":release:2.2.1"
@@ -65,13 +64,12 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.2"
 
         // opzionali
-        //runtime ":jquery:1.8.3"
-        //runtime ":database-migration:1.3.2"
-        //runtime ":zipped-resources:1.0"
-        //runtime ":cached-resources:1.0"
-        //runtime ":yui-minify-resources:0.1.5"
+        compile ":export:1.5"
+        compile ":quartz:1.0-RC9"
+        compile ":mail:1.0.1"
+        compile ":csv:0.3.1"    //@todo da spostare in algos
 
-        // plugin della algos
+        //--plugin della algos
         compile ":algos:latest.integration"
     }// fine della closure plugins
 

@@ -33,15 +33,23 @@ class CategoriaController {
 
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+        params.max = Math.min(max ?: 100, 100)
+        ArrayList menuExtra
+        ArrayList campiLista
         def lista
         def campoSort
+
+        //--selezione dei menu extra
+        //--solo azione e di default controller=questo; classe e titolo vengono uguali
+        //--mappa con [cont:'controller', action:'metodo', icon:'iconaImmagine', title:'titoloVisibile']
+        menuExtra = []
+        // fine della definizione
 
         //--selezione delle colonne (campi) visibili nella lista
         //--solo nome e di default il titolo viene uguale
         //--mappa con [campo:'nomeDelCampo', titolo:'titoloVisibile', sort:'ordinamento']
-        def campiLista = [
-        ]// fine della definizione
+        campiLista = []
+        // fine della definizione
 
         //--regolazione dei campo di ordinamento
         //--regolazione dei parametri di ordinamento
@@ -60,14 +68,23 @@ class CategoriaController {
             params.order = 'asc'
         }// fine del blocco if-else
 
-        //--metodo di esportazione dei dati
+        //--metodo di esportazione dei dati (eventuale)
         export(params)
 
         //--selezione dei records da mostrare
+        //--per una lista filtrata (parziale), modificare i parametri
+        //--oppure modificare il findAllByInteroGreaterThan()...
         lista = Categoria.findAll(params)
 
         //--presentazione della view (list), secondo il modello
-        render(view: 'list', model: [categoriaInstanceList: Categoria.list(params), categoriaInstanceTotal: Categoria.count(), campiLista: campiLista], params: params)
+        //--menuExtra e campiLista possono essere nulli o vuoti
+        //--se campiLista è vuoto, mostra tutti i campi (primi 8)
+        render(view: 'list', model: [
+                categoriaInstanceList: lista,
+                categoriaInstanceTotal: lista.size(),
+                menuExtra: menuExtra,
+                campiLista: campiLista],
+                params: params)
     } // fine del metodo
 
     //--metodo di esportazione dei dati
