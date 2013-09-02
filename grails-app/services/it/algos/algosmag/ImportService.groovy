@@ -17,28 +17,81 @@ import org.grails.plugins.csv.CSVMapReader
 
 class ImportService {
 
+    //assumes the first line of the file has the field names
     def importaDaFile(String pathFile) {
         URLConnection connection
         InputStream input
         InputStreamReader stream
 
         connection = new URL('file:///' + pathFile).openConnection()
-        input = connection.getInputStream();
-        stream = new InputStreamReader(input, 'UTF8');
 
-        //assumes the first line of the file has the field names
+        input = connection.getInputStream()
+        stream = new InputStreamReader(input, 'UTF8')
         new CSVMapReader(stream).each { map ->
-            creaRecord((Map) map)
+            creaCategorie((Map) map)
         } // fine del ciclo each
+        stream.close()
+        input.close()
+
+        input = connection.getInputStream()
+        stream = new InputStreamReader(input, 'UTF8')
+        new CSVMapReader(stream).each { map ->
+            creaUnita((Map) map)
+        } // fine del ciclo each
+        stream.close()
+        input.close()
+
+        input = connection.getInputStream()
+        stream = new InputStreamReader(input, 'UTF8')
+        new CSVMapReader(stream).each { map ->
+            creaArticoli((Map) map)
+        } // fine del ciclo each
+        stream.close()
+        input.close()
     } // fine del metodo
 
-    def creaRecord(Map mappa) {
+    def creaCategorie(Map mappa) {
+        Categoria cat
+        String nomeCat
+
+        if (mappa.categoria) {
+            nomeCat = mappa.categoria
+        }// fine del blocco if
+
+        if (nomeCat) {
+            cat = Categoria.findOrCreateByNome(nomeCat)
+        }// fine del blocco if
+
+        if (cat) {
+            cat.save(flush: true)
+        }// fine del blocco if
+    } // fine del metodo
+
+    def creaUnita(Map mappa) {
+        Unita uni
+        String siglaUni
+
+        if (mappa.unitaDiMisura) {
+            siglaUni = mappa.unitaDiMisura
+        }// fine del blocco if
+
+        if (siglaUni) {
+            uni = Unita.findOrCreateBySigla(siglaUni)
+        }// fine del blocco if
+
+        if (uni) {
+            uni.save(flush: true)
+        }// fine del blocco if
+    } // fine del metodo
+
+    def creaArticoli(Map mappa) {
         ArrayList fields
         String nomeCampo
         Articolo articolo
 
         articolo = new Articolo(mappa)
         checkCategoria(articolo, mappa)
+        checkUnita(articolo, mappa)
         def art = articolo.save(flush: true)
         def stop
 //        fields = new DefaultGrailsDomainClass(Articolo.class).persistentProperties*.name
@@ -64,25 +117,30 @@ class ImportService {
         }// fine del blocco if
 
         if (nomeCat) {
-            cat = Categoria.findOrCreateByNome(nomeCat).save(flush: true)
+            cat = Categoria.findByNome(nomeCat)
         }// fine del blocco if
 
         if (cat) {
             articolo.categoria = cat
         }// fine del blocco if
-
-//        fields = new DefaultGrailsDomainClass(Articolo.class).persistentProperties*.name
-//        if (fields) {
-//            articolo = new Articolo()
-//            fields?.each {
-//                nomeCampo = it
-//                if (mappa[nomeCampo]) {
-//                    if (!nomeCampo.equals('categoria')) {
-//                        articolo."${nomeCampo}" = mappa[nomeCampo]
-//                    }// fine del blocco if
-//                }// fine del blocco if
-//            } // fine del ciclo each
-//        }// fine del blocco if
     } // fine del metodo
+
+    def checkUnita(Articolo articolo, Map mappa) {
+        Unita uni
+        String siglaUni
+
+        if (mappa.unitaDiMisura) {
+            siglaUni = mappa.unitaDiMisura
+        }// fine del blocco if
+
+        if (siglaUni) {
+            uni = Unita.findBySigla(siglaUni)
+        }// fine del blocco if
+
+        if (uni) {
+            articolo.unitaDiMisura = uni
+        }// fine del blocco if
+    } // fine del metodo
+
 
 } // fine della service classe

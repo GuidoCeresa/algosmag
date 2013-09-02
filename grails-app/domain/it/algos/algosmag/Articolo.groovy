@@ -22,7 +22,7 @@ class Articolo {
     String descrizione
     int prezzoAcquisto
     int prezzoVendita
-    Unita unitaDiMisura  =null
+    Unita unitaDiMisura = null
     int quantita
     int scortaMinima
     boolean sottoscorta
@@ -36,7 +36,7 @@ class Articolo {
      */
     static constraints = {
         categoria(nullable: true, blank: true)
-        codice(nullable: false, blank: false, unique: true)
+        codice(nullable: false, blank: false)
         nome(nullable: false, blank: false)
         descrizione(widget: 'textarea', nullable: true, blank: true)
         prezzoAcquisto(nullable: true, blank: true)
@@ -66,10 +66,9 @@ class Articolo {
 
     /**
      * valore di testo restituito per una istanza della classe
-     * @todo da regolare (obbligatorio)
      */
     String toString() {
-        return ''
+        return nome
     } // end of toString
 
     /**
