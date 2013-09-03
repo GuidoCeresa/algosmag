@@ -36,7 +36,7 @@ class Articolo {
      */
     static constraints = {
         categoria(nullable: true, blank: true)
-        codice(nullable: false, blank: false)
+        codice(nullable: true, blank: false)
         nome(nullable: false, blank: false)
         descrizione(widget: 'textarea', nullable: true, blank: true)
         prezzoAcquisto(nullable: true, blank: true)
@@ -45,7 +45,7 @@ class Articolo {
         quantita(nullable: true, blank: true)
         scortaMinima(nullable: true, blank: true)
         sottoscorta(nullable: true)
-        note(widget: 'textarea', nullable: false, blank: true)
+        note(widget: 'textarea', nullable: true, blank: true)
     } // end of static constraints
 
     /**

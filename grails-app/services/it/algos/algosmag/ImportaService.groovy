@@ -15,7 +15,7 @@ package it.algos.algosmag
 
 import org.grails.plugins.csv.CSVMapReader
 
-class ImportService {
+class ImportaService {
 
     //assumes the first line of the file has the field names
     def importaDaFile(String pathFile) {
@@ -24,23 +24,6 @@ class ImportService {
         InputStreamReader stream
 
         connection = new URL('file:///' + pathFile).openConnection()
-
-        input = connection.getInputStream()
-        stream = new InputStreamReader(input, 'UTF8')
-        new CSVMapReader(stream).each { map ->
-            creaCategorie((Map) map)
-        } // fine del ciclo each
-        stream.close()
-        input.close()
-
-        input = connection.getInputStream()
-        stream = new InputStreamReader(input, 'UTF8')
-        new CSVMapReader(stream).each { map ->
-            creaUnita((Map) map)
-        } // fine del ciclo each
-        stream.close()
-        input.close()
-
         input = connection.getInputStream()
         stream = new InputStreamReader(input, 'UTF8')
         new CSVMapReader(stream).each { map ->
@@ -50,49 +33,60 @@ class ImportService {
         input.close()
     } // fine del metodo
 
-    def creaCategorie(Map mappa) {
-        Categoria cat
-        String nomeCat
-
-        if (mappa.categoria) {
-            nomeCat = mappa.categoria
-        }// fine del blocco if
-
-        if (nomeCat) {
-            cat = Categoria.findOrCreateByNome(nomeCat)
-        }// fine del blocco if
-
-        if (cat) {
-            cat.save(flush: true)
-        }// fine del blocco if
-    } // fine del metodo
-
-    def creaUnita(Map mappa) {
-        Unita uni
-        String siglaUni
-
-        if (mappa.unitaDiMisura) {
-            siglaUni = mappa.unitaDiMisura
-        }// fine del blocco if
-
-        if (siglaUni) {
-            uni = Unita.findOrCreateBySigla(siglaUni)
-        }// fine del blocco if
-
-        if (uni) {
-            uni.save(flush: true)
-        }// fine del blocco if
-    } // fine del metodo
-
     def creaArticoli(Map mappa) {
-        ArrayList fields
-        String nomeCampo
         Articolo articolo
+        String prezzoAcquistoTxt
+        int prezzoAcquisto
+        String prezzoVenditaTxt
+        int prezzoVendita
+        String quantitaTxt
+        int quantita
+        String scortaMinimaTxt
+        int scortaMinima
 
-        articolo = new Articolo(mappa)
-        checkCategoria(articolo, mappa)
-        checkUnita(articolo, mappa)
-        def art = articolo.save(flush: true)
+        articolo = new Articolo()
+        articolo.categoria = findCategoria(mappa)
+        if (mappa.codice) {
+            articolo.codice = mappa.codice
+        }// fine del blocco if
+        if (mappa.nome) {
+            articolo.nome = mappa.nome
+        }// fine del blocco if
+        if (mappa.descrizione) {
+            articolo.descrizione = mappa.descrizione
+        }// fine del blocco if
+        if (mappa.prezzoAcquisto) {
+            prezzoAcquistoTxt = mappa.prezzoAcquisto
+            prezzoAcquisto = Integer.decode(prezzoAcquistoTxt)
+            articolo.prezzoAcquisto = prezzoAcquisto
+        }// fine del blocco if
+        if (mappa.prezzoVendita) {
+            prezzoVenditaTxt = mappa.prezzoVendita
+            prezzoVendita = Integer.decode(prezzoVenditaTxt)
+            articolo.prezzoVendita = prezzoVendita
+        }// fine del blocco if
+        articolo.unitaDiMisura = findUnita(mappa)
+        if (mappa.quantita) {
+            quantitaTxt = mappa.quantita
+            quantita = Integer.decode(quantitaTxt)
+            articolo.quantita = quantita
+        }// fine del blocco if
+        if (mappa.scortaMinima) {
+            scortaMinimaTxt = mappa.scortaMinima
+            scortaMinima = Integer.decode(scortaMinimaTxt)
+            articolo.scortaMinima = scortaMinima
+        }// fine del blocco if
+        if (mappa.sottoscorta) {
+            if (mappa.sottoscorta.equals('true')) {
+                articolo.sottoscorta = true
+            } else {
+                articolo.sottoscorta = false
+            }// fine del blocco if-else
+        }// fine del blocco if
+        if (mappa.note) {
+            articolo.note = mappa.note
+        }// fine del blocco if
+        def regisyto = articolo.save(flush: true)
         def stop
 //        fields = new DefaultGrailsDomainClass(Articolo.class).persistentProperties*.name
 //        if (fields) {
@@ -108,8 +102,8 @@ class ImportService {
 //        }// fine del blocco if
     } // fine del metodo
 
-    def checkCategoria(Articolo articolo, Map mappa) {
-        Categoria cat
+    def Categoria findCategoria(Map mappa) {
+        Categoria categoria = null
         String nomeCat
 
         if (mappa.categoria) {
@@ -117,16 +111,15 @@ class ImportService {
         }// fine del blocco if
 
         if (nomeCat) {
-            cat = Categoria.findByNome(nomeCat)
+            categoria = Categoria.findOrCreateByNome(nomeCat)
+            categoria.save(flush: true)
         }// fine del blocco if
 
-        if (cat) {
-            articolo.categoria = cat
-        }// fine del blocco if
+        return categoria
     } // fine del metodo
 
-    def checkUnita(Articolo articolo, Map mappa) {
-        Unita uni
+    def Unita findUnita(Map mappa) {
+        Unita unita = null
         String siglaUni
 
         if (mappa.unitaDiMisura) {
@@ -134,12 +127,11 @@ class ImportService {
         }// fine del blocco if
 
         if (siglaUni) {
-            uni = Unita.findBySigla(siglaUni)
+            unita = Unita.findOrCreateBySigla(siglaUni)
+            unita.save(flush: true)
         }// fine del blocco if
 
-        if (uni) {
-            articolo.unitaDiMisura = uni
-        }// fine del blocco if
+        return unita
     } // fine del metodo
 
 

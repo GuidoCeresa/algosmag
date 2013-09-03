@@ -26,11 +26,9 @@ class ${className}Controller {
     def logoService
     def eventoService
 
-
     def index() {
         redirect(action: 'list', params: params)
     } // fine del metodo
-
 
     def list(Integer max) {
         params.max = Math.min(max ?: 100, 100)

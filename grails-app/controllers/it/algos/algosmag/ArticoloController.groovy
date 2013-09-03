@@ -13,6 +13,8 @@
 
 package it.algos.algosmag
 
+import it.algos.algos.ImportService
+import it.algos.algos.TipoDialogo
 import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
 import org.springframework.dao.DataIntegrityViolationException
 
@@ -27,7 +29,8 @@ class ArticoloController {
     def exportService
     def logoService
     def eventoService
-    ImportService importService  = new ImportService()
+    def importService
+    def importaService
 
     def index() {
         redirect(action: 'list', params: params)
@@ -44,7 +47,7 @@ class ArticoloController {
         //--selezione dei menu extra
         //--solo azione e di default controller=questo; classe e titolo vengono uguali
         //--mappa con [cont:'controller', action:'metodo', icon:'iconaImmagine', title:'titoloVisibile']
-        menuExtra = ['importa']
+        menuExtra = ['deleteAll', 'importa']
         // fine della definizione
 
         //--selezione delle colonne (campi) visibili nella lista
@@ -123,19 +126,53 @@ class ArticoloController {
         }// fine del blocco if
     } // fine del metodo
 
-    def importa() {
-        String pathFile = '/Users/Gac/Desktop/Articolo.csv'
-        importService.importaDaFile(pathFile)
+    def deleteAll() {
+        Articolo.findAll()*.delete(flush: true)
+        redirect(action: 'list', params: params)
+    } // fine del metodo
 
-        //custom title, warning icon
-        JOptionPane.showMessageDialog( null,
-                "Importa solo file in formato CSV",
-                "Inane warning",
-                JOptionPane.WARNING_MESSAGE);
+    def importa() {
+        params.tipo = TipoDialogo.inputFile
+        params.returnController = 'articolo'
+        params.returnAction = 'importaRitorno'
+        redirect(controller: 'dialogo', action: 'box', params: params)
+    } // fine del metodo
+
+    def importaRitorno() {
+        String pathFile
+        String tagCSV = 'csv'
+        String valoreDirectory = ''
+        String valoreNomeFile = ''
+
+        def a = params
+        if (params.valoreDirectory) {
+            valoreDirectory = params.valoreDirectory
+        }// fine del blocco if
+        if (params.valoreNomeFile) {
+            valoreNomeFile = params.valoreNomeFile
+        }// fine del blocco if
+
+        if (valoreDirectory && valoreNomeFile) {
+            pathFile = valoreDirectory + '/' + valoreNomeFile
+            if (pathFile.endsWith(tagCSV)) {
+                if (new File(pathFile).exists()) {
+                    importaService.importaDaFile(pathFile)
+                } else {
+                    flash.error = 'Sorry, il file selezionato (directory + nome) non esiste'
+                }// fine del blocco if-else
+            } else {
+                flash.error = 'Sorry, non hai selezionato un file di tipo CSV'
+            }// fine del blocco if-else
+        } else {
+            if (!valoreDirectory) {
+                flash.error = 'Sorry, non hai selezionato nessuna directory'
+            }// fine del blocco if
+            if (!valoreNomeFile) {
+                flash.error = 'Sorry, non hai selezionato nessun file'
+            }// fine del blocco if
+        }// fine del blocco if-else
 
         redirect(action: 'list', params: params)
-
-//        render '<input type="file" id="payload" name="payload"/>'
     } // fine del metodo
 
     def create() {

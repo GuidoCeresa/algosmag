@@ -31,7 +31,7 @@
         <li><g:link class="create" action="create"><g:message code="${domainClass.propertyName}.new.label"
                                                               args="[entityName]" default="Nuovo"/></g:link></li>
         <g:if test="\${menuExtra}">
-            <algos:menuExtra campiExtra="\${menuExtra}"> </algos:menuExtra>
+            <algos:menuExtra menuExtra="\${menuExtra}"> </algos:menuExtra>
         </g:if>
     </ul>
 </div>
@@ -40,6 +40,9 @@
     <h1><g:message code="${domainClass.propertyName}.list.label" args="[entityName]" default="Elenco"/></h1>
     <g:if test="\${flash.message}">
         <div class="message" role="status">\${flash.message}</div>
+    </g:if>
+    <g:if test="\${flash.error}">
+        <div class="errors" role="status">\${flash.error}</div>
     </g:if>
     <table>
         <thead>
