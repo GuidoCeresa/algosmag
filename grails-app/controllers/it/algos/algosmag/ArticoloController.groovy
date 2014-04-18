@@ -102,11 +102,11 @@ class ArticoloController {
                 [campo: 'categoria', title: 'Cat'],
                 'codice',
                 'nome',
-                [campo: 'prezzoAcquisto', title: 'Costo'],
-                [campo: 'prezzoVendita', title: 'Prezzo'],
+                [campo: 'prezzoAcquisto', title: 'Acuisto'],
+                [campo: 'prezzoVendita', title: 'Vendita'],
                 [campo: 'unitaDiMisura', title: 'UdM'],
                 'quantita',
-                [campo: 'scortaMinima', title: 'Scorta'],
+//                [campo: 'scortaMinima', title: 'Scorta'],
                 'sottoscorta',
         ]// fine della definizione
 

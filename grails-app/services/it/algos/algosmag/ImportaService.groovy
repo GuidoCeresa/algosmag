@@ -36,13 +36,13 @@ class ImportaService {
     def creaArticoli(Map mappa) {
         Articolo articolo
         String prezzoAcquistoTxt
-        int prezzoAcquisto
+        BigDecimal prezzoAcquisto
         String prezzoVenditaTxt
-        int prezzoVendita
+        BigDecimal prezzoVendita
         String quantitaTxt
-        int quantita
+        BigDecimal quantita
         String scortaMinimaTxt
-        int scortaMinima
+        BigDecimal scortaMinima
 
         articolo = new Articolo()
         articolo.categoria = findCategoria(mappa)
@@ -57,24 +57,32 @@ class ImportaService {
         }// fine del blocco if
         if (mappa.prezzoAcquisto) {
             prezzoAcquistoTxt = mappa.prezzoAcquisto
-            prezzoAcquisto = Integer.decode(prezzoAcquistoTxt)
-            articolo.prezzoAcquisto = prezzoAcquisto
+            prezzoAcquisto = new BigDecimal(prezzoAcquistoTxt)
+            if (prezzoAcquisto) {
+                articolo.prezzoAcquisto = prezzoAcquisto
+            }// fine del blocco if
         }// fine del blocco if
         if (mappa.prezzoVendita) {
             prezzoVenditaTxt = mappa.prezzoVendita
-            prezzoVendita = Integer.decode(prezzoVenditaTxt)
-            articolo.prezzoVendita = prezzoVendita
+            prezzoVendita = new BigDecimal(prezzoVenditaTxt)
+            if (prezzoVendita) {
+                articolo.prezzoVendita = prezzoVendita
+            }// fine del blocco if
         }// fine del blocco if
         articolo.unitaDiMisura = findUnita(mappa)
         if (mappa.quantita) {
             quantitaTxt = mappa.quantita
-            quantita = Integer.decode(quantitaTxt)
-            articolo.quantita = quantita
+            quantita = new BigDecimal(quantitaTxt)
+            if (quantita) {
+                articolo.quantita = quantita
+            }// fine del blocco if
         }// fine del blocco if
         if (mappa.scortaMinima) {
             scortaMinimaTxt = mappa.scortaMinima
-            scortaMinima = Integer.decode(scortaMinimaTxt)
-            articolo.scortaMinima = scortaMinima
+            scortaMinima = new BigDecimal(scortaMinimaTxt)
+            if (scortaMinima) {
+                articolo.scortaMinima = scortaMinima
+            }// fine del blocco if
         }// fine del blocco if
         if (mappa.sottoscorta) {
             if (mappa.sottoscorta.equals('true')) {
