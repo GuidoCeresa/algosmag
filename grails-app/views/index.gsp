@@ -101,6 +101,13 @@
 <div id="page-body" role="main">
     <h1>Benvenuto in ${grailsApplication.metadata.'app.name'}</h1>
 
+    <g:if test="${flash.message}">
+        <div class="message" role="status">${flash.message}</div>
+    </g:if>
+    <g:if test="${flash.error}">
+        <div class="errors" role="status">${flash.error}</div>
+    </g:if>
+
     <div id="controller-list" role="navigation">
         <h2>Moduli disponibili:</h2>
         <ul>

@@ -3,6 +3,7 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="IdProvider" IDEtalkID="739F9A6598CE71D465076D07001A48AE" />
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/grails-app/controllers/it/algos/algosmag/CategoriaController.groovy" />
   </component>

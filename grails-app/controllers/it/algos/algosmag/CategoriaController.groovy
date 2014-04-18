@@ -13,7 +13,9 @@
 
 package it.algos.algosmag
 
+import it.algos.algospref.Pref
 import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
+import org.grails.plugin.filterpane.FilterPaneUtils
 import org.springframework.dao.DataIntegrityViolationException
 
 class CategoriaController {
@@ -22,32 +24,124 @@ class CategoriaController {
 
     // utilizzo di un service con la businessLogic per l'elaborazione dei dati
     // il service viene iniettato automaticamente
+    def filterPaneService
     def exportService
-    def logoService
     def eventoService
+    def logoService
 
+    // flag per usare il filtro/ricerca/selezione in questo controller
+    private static boolean USA_FILTER = true
+
+    // flag per usare l'export in questo controller
+    private static boolean USA_EXPORT = true
+
+    private static int MAX = 20
 
     def index() {
+        regolaFiltro()
+        regolaExport()
         redirect(action: 'list', params: params)
     } // fine del metodo
 
+    /**
+     * Regola un flag (nei params) per mostrare o meno una finestra/dialogo
+     * di ricerca/selezione/filtro dei records
+     * Di default il flag usaFilter, è true
+     *
+     * Può essere disabilitato in maniera dinamica,
+     * senza avviare/riavviare l'applicazione,
+     * solo per questo controller,
+     * creando nelle Pref una preferenza specifica solo per questo controller
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * solo per questo controller
+     * cancellando il corpo di questo metodo
+     * e regolando la variabile statica della classe
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * per tutta l'applicazione,
+     * modificando il parametro servletContext.usaFilter,
+     * contenuto nella classe FilterBootStrap
+     *
+     * (queste note si possono cancellare e rileggere nel file.txt README)
+     */
+    def regolaFiltro() {
+        def risultato = Pref.getBool("usaFilterCategoria")
+
+        if (risultato != null && risultato instanceof Boolean) {
+            USA_FILTER = risultato
+        } else {
+            if (servletContext.usaFilter != null && servletContext.usaFilter instanceof Boolean) {
+                USA_FILTER = servletContext.usaFilter
+            }// fine del blocco if
+        }// fine del blocco if-else
+    } // fine del metodo
+
+    /**
+     * Regola un flag per mostrare o meno una finestra/dialogo
+     * di ricerca/selezione/filtro dei records
+     * Di default il flag usaExport, è true
+     *
+     * Può essere disabilitato in maniera dinamica,
+     * senza avviare/riavviare l'applicazione,
+     * solo per questo controller,
+     * creando nelle Pref una preferenza specifica solo per questo controller
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * solo per questo controller
+     * cancellando il corpo di questo metodo
+     * e regolando la variabile statica della classe
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * per tutta l'applicazione,
+     * modificando il parametro servletContext.usaExport,
+     * contenuto nella classe ExportBootStrap
+     *
+     * (queste note si possono cancellare e rileggere nel file.txt README)
+     */
+    def regolaExport() {
+        def risultato = Pref.getBool("usaExportCategoria")
+
+        if (risultato != null && risultato instanceof Boolean) {
+            USA_EXPORT = risultato
+        } else {
+            if (servletContext.usaExport != null && servletContext.usaExport instanceof Boolean) {
+                USA_EXPORT = servletContext.usaExport
+            }// fine del blocco if
+        }// fine del blocco if-else
+    } // fine del metodo
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 100, 100)
+        redirect(action: 'filter', params: params)
+    } // fine del metodo
+
+    //--filtro di selezione e ricerca
+    def filter = {
+        if (!params.max) params.max = MAX
         ArrayList menuExtra
         ArrayList campiLista
-        def lista
         def campoSort
+        int recordsParziali
+        int recordsTotali
+        String titoloLista
+        String titoloListaFiltrata
 
         //--selezione dei menu extra
         //--solo azione e di default controller=questo; classe e titolo vengono uguali
         //--mappa con [cont:'controller', action:'metodo', icon:'iconaImmagine', title:'titoloVisibile']
         menuExtra = []
+        params.menuExtra = menuExtra
         // fine della definizione
 
         //--selezione delle colonne (campi) visibili nella lista
         //--solo nome e di default il titolo viene uguale
-        //--mappa con [campo:'nomeDelCampo', titolo:'titoloVisibile', sort:'ordinamento']
+        //--mappa con [campo:'nomeDelCampo', title:'titoloVisibile', sort:'ordinamento']
+        //--se vuoto, mostra i primi n (stabilito nel templates:scaffoldinf:list)
+        //--    nell'ordine stabilito nella constraints della DomainClass
         campiLista = []
         // fine della definizione
 
@@ -69,22 +163,34 @@ class CategoriaController {
         }// fine del blocco if-else
 
         //--metodo di esportazione dei dati (eventuale)
-        export(params)
+        if (USA_EXPORT) {
+            export(params)
+        }// fine del blocco if
 
         //--selezione dei records da mostrare
-        //--per una lista filtrata (parziale), modificare i parametri
-        //--oppure modificare il findAllByInteroGreaterThan()...
-        lista = Categoria.findAll(params)
+        //--per una lista filtrata (parziale), appare il dialogo
+        recordsParziali = filterPaneService.count(params, Categoria)
+        recordsTotali = Categoria.count()
 
-        //--presentazione della view (list), secondo il modello
+        //--calcola il numero di record
+        titoloLista = "Elenco di " + params.max + "/" + recordsParziali + " records di categoria"
+        titoloListaFiltrata = "Elenco di " + params.max + "/" + recordsParziali + " records filtrati di categoria"
+
+        //--presentazione della view (index), secondo il modello
         //--menuExtra e campiLista possono essere nulli o vuoti
-        //--se campiLista è vuoto, mostra tutti i campi (primi 8)
-        render(view: 'list', model: [
-                categoriaInstanceList: lista,
-                categoriaInstanceTotal: lista.size(),
-                menuExtra: menuExtra,
-                campiLista: campiLista],
-                params: params)
+        //--se campiLista è vuoto, mostra tutti i campi (primi 12)
+        render(view: 'index',
+                model: [categoriaInstanceList : filterPaneService.filter(params, Categoria),
+                        categoriaInstanceCount: recordsParziali,
+                        categoriaInstanceTotal: recordsTotali,
+                        filterParams          : FilterPaneUtils.extractFilterParams(params),
+                        usaFilter             : USA_FILTER,
+                        usaExport             : USA_EXPORT,
+                        menuExtra             : menuExtra,
+                        titoloLista           : titoloLista,
+                        titoloListaFiltrata   : titoloListaFiltrata,
+                        campiLista            : campiLista,
+                        params                : params])
     } // fine del metodo
 
     //--metodo di esportazione dei dati
@@ -98,7 +204,7 @@ class CategoriaController {
         List fields = null
         Map parameters
 
-        if (exportService && servletContext.usaExport) {
+        if (exportService && USA_EXPORT) {
             if (params?.format && params.format != 'html') {
                 if (!records) {
                     records = Categoria.list(params)
@@ -132,7 +238,7 @@ class CategoriaController {
         }// fine del blocco if
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
-        redirect(action: 'show', id: categoriaInstance.id)
+        redirect(action: 'list')
     } // fine del metodo
 
     def show(Long id) {
@@ -186,7 +292,7 @@ class CategoriaController {
         }// fine del blocco if e fine anticipata del metodo
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'categoria.label', default: 'Categoria'), categoriaInstance.id])
-        redirect(action: 'show', id: categoriaInstance.id)
+        redirect(action: 'list')
     } // fine del metodo
 
     def delete(Long id) {

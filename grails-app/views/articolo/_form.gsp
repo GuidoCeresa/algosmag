@@ -15,10 +15,10 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'categoria', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'categoria', 'error')} ">
 	<label for="categoria">
 		<g:message code="articolo.categoria.label" default="Categoria" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	
 
@@ -31,13 +31,13 @@
 
 
 
-<g:select id="categoria" name="categoria.id" from="${it.algos.algosmag.Categoria.list()}" optionKey="id" required="" value="${articoloInstance?.categoria?.id}" class="many-to-one"/>
+<g:select id="categoria" name="categoria.id" from="${it.algos.algosmag.Categoria.list()}" optionKey="id" value="${articoloInstance?.categoria?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'codice', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'codice', 'error')} ">
 	<label for="codice">
 		<g:message code="articolo.codice.label" default="Codice" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	
 
@@ -50,7 +50,7 @@
 
 
 
-<g:textField name="codice" required="" value="${articoloInstance?.codice}"/>
+<g:textField name="codice" value="${articoloInstance?.codice}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'nome', 'error')} required">
@@ -91,10 +91,10 @@
 <g:textArea name="descrizione" cols="40" rows="5" value="${articoloInstance?.descrizione}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'prezzoAcquisto', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'prezzoAcquisto', 'error')} ">
 	<label for="prezzoAcquisto">
 		<g:message code="articolo.prezzoAcquisto.label" default="Prezzo Acquisto" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	
 
@@ -107,13 +107,13 @@
 
 
 
-<g:field name="prezzoAcquisto" type="number" value="${articoloInstance.prezzoAcquisto}" required=""/>
+<g:field name="prezzoAcquisto" value="${fieldValue(bean: articoloInstance, field: 'prezzoAcquisto')}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'prezzoVendita', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'prezzoVendita', 'error')} ">
 	<label for="prezzoVendita">
 		<g:message code="articolo.prezzoVendita.label" default="Prezzo Vendita" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	
 
@@ -126,7 +126,7 @@
 
 
 
-<g:field name="prezzoVendita" type="number" value="${articoloInstance.prezzoVendita}" required=""/>
+<g:field name="prezzoVendita" value="${fieldValue(bean: articoloInstance, field: 'prezzoVendita')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'unitaDiMisura', 'error')} ">
@@ -148,10 +148,10 @@
 <g:select id="unitaDiMisura" name="unitaDiMisura.id" from="${it.algos.algosmag.Unita.list()}" optionKey="id" value="${articoloInstance?.unitaDiMisura?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'quantita', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'quantita', 'error')} ">
 	<label for="quantita">
 		<g:message code="articolo.quantita.label" default="Quantita" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	
 
@@ -164,13 +164,13 @@
 
 
 
-<g:field name="quantita" type="number" value="${articoloInstance.quantita}" required=""/>
+<g:field name="quantita" value="${fieldValue(bean: articoloInstance, field: 'quantita')}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'scortaMinima', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'scortaMinima', 'error')} ">
 	<label for="scortaMinima">
 		<g:message code="articolo.scortaMinima.label" default="Scorta Minima" />
-		<span class="required-indicator">*</span>
+		
 	</label>
 	
 
@@ -183,7 +183,7 @@
 
 
 
-<g:field name="scortaMinima" type="number" value="${articoloInstance.scortaMinima}" required=""/>
+<g:field name="scortaMinima" value="${fieldValue(bean: articoloInstance, field: 'scortaMinima')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: articoloInstance, field: 'sottoscorta', 'error')} ">

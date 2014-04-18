@@ -1,15 +1,15 @@
-<%/* Created by Algos s.r.l. */%>
-<%/* Date: mag 2013 */%>
-<%/* Il plugin Algos ha creato o sovrascritto il templates che ha creato questo file. */%>
-<%/* L'header del templates serve per controllare le successive release */%>
-<%/* (tramite il flag di controllo aggiunto) */%>
-<%/* Tipicamente VERRA sovrascritto (il template, non il file) ad ogni nuova release */%>
-<%/* del plugin per rimanere aggiornato. */%>
-<%/* Se vuoi che le prossime release del plugin NON sovrascrivano il template che */%>
-<%/* genera questo file, perdendo tutte le modifiche precedentemente effettuate, */%>
-<%/* regola a false il flag di controllo flagOverwrite© del template stesso. */%>
-<%/* (non quello del singolo file) */%>
-<%/* flagOverwrite = true */%>
+<% /* Created by Algos s.r.l. */ %>
+<% /* Date: mag 2013 */ %>
+<% /* Il plugin Algos ha creato o sovrascritto il templates che ha creato questo file. */ %>
+<% /* L'header del templates serve per controllare le successive release */ %>
+<% /* (tramite il flag di controllo aggiunto) */ %>
+<% /* Tipicamente VERRA sovrascritto (il template, non il file) ad ogni nuova release */ %>
+<% /* del plugin per rimanere aggiornato. */ %>
+<% /* Se vuoi che le prossime release del plugin NON sovrascrivano il template che */ %>
+<% /* genera questo file, perdendo tutte le modifiche precedentemente effettuate, */ %>
+<% /* regola a false il flag di controllo flagOverwrite© del template stesso. */ %>
+<% /* (non quello del singolo file) */ %>
+<% /* flagOverwrite = true */ %>
 
 <% import grails.persistence.Event %>
 <%=packageName%>
@@ -19,6 +19,7 @@
     <meta name="layout" content="main">
     <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}"/>
     <title><g:message code="${domainClass.propertyName}.list.label" args="[entityName]" default="Elenco"/></title>
+    <r:require module="filterpane"/>
 </head>
 
 <body>
@@ -27,11 +28,13 @@
 
 <div class="nav" role="navigation">
     <ul>
-        <li><a class="home" href="\${createLink(uri: '/home')}"><g:message code="default.home.label" default="Home"/></a></li>
+        <li><a class="home" href="\${createLink(uri: '/home')}"><g:message code="default.home.label"
+                                                                           default="Home"/></a>
+        </li>
         <li><g:link class="create" action="create"><g:message code="${domainClass.propertyName}.new.label"
                                                               args="[entityName]" default="Nuovo"/></g:link></li>
         <g:if test="\${menuExtra}">
-            <algos:menuExtra menuExtra="\${menuExtra}"> </algos:menuExtra>
+            <algos:menuExtra menuExtra="\${menuExtra}"></algos:menuExtra>
         </g:if>
     </ul>
 </div>
@@ -55,12 +58,19 @@
         </g:each>
     </g:if>
 
-    <g:if test="\${titoloLista}">
-        <h1>\${titoloLista}</h1>
+    <g:if test="\${usaFilter}">
+        <filterpane:isNotFiltered><h1>\${titoloLista}</h1></filterpane:isNotFiltered>
+        <filterpane:isFiltered><h1>\${titoloListaFiltrata}</h1></filterpane:isFiltered>
     </g:if>
     <g:else>
-        <h1><g:message code="${domainClass.propertyName}.list.label" args="[entityName]" default="Elenco"/></h1>
+        <g:if test="\${titoloLista}">
+            <h1>\${titoloLista}</h1>
+        </g:if>
+        <g:else>
+            <h1><g:message code="${domainClass.propertyName}.list.label" args="[entityName]" default="Elenco"/></h1>
+        </g:else>
     </g:else>
+
 
     <table>
         <thead>
@@ -71,21 +81,25 @@
             <tr>
                 <% excludedProps = Event.allEvents.toList() << 'id' << 'version'
                 allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
-                props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) && it.type != null && !Collection.isAssignableFrom(it.type) }
+                props = domainClass.properties.findAll {
+                    allowedNames.contains(it.name) && !excludedProps.contains(it.name) && it.type != null && !Collection.isAssignableFrom(it.type)
+                }
                 Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
                 props.eachWithIndex { p, i ->
-                    if (i < 8) {
+                    if (i < 12) {
                         if (p.isAssociation()) { %>
                 <th><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}"/></th>
                 <% } else { %>
                 <g:sortableColumn property="${p.name}"
-                                  title="\${message(code: '${domainClass.propertyName}.${p.name}.label', default: '${p.naturalName}')}"/>
+                                  title="\${message(code: '${domainClass.propertyName}.${p.name}.label', default: '${
+                                          p.naturalName}')}"/>
                 <% }
                 }
                 } %>
             </tr>
         </g:else>
         </thead>
+
         <tbody>
         <g:if test="\${campiLista}">
             <g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
@@ -98,14 +112,18 @@
             <g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
                 <tr class="\${(i % 2) == 0 ? 'even' : 'odd'}">
                     <% props.eachWithIndex { p, i ->
-                        if (i < 8) {
+                        if (i < 12) {
                             if (p.type == Boolean || p.type == boolean) { %>
-                    <td><g:formatBoolean boolean="\${${propertyName}.${p.name}}"/></td>
-                    <% } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
+                    <g:if test="\${${propertyName}.${p.name}!=null}">
+                        <td><g:checkBox name="${p.name}" value="\${${propertyName}.${p.name}}"/></td>
+                    </g:if>
+                    <%
+                        } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
                     <td><g:formatDate date="\${${propertyName}.${p.name}}"/></td>
                     <% } else { %>
                     <td><g:link action="show"
-                                id="\${${propertyName}.id}">\${fieldValue(bean: ${propertyName}, field: "${p.name}")}</g:link></td>
+                                id="\${${propertyName}.id}">\${fieldValue(bean: ${propertyName}, field: "${
+                                p.name}")}</g:link></td>
                     <% }
                     }
                     } %>
@@ -114,10 +132,21 @@
         </g:else>
         </tbody>
     </table>
+
     <div class="pagination">
-        <g:paginate total="\${${propertyName}Total}"/>
+        <g:if test="\${usaFilter}">
+            <filterpane:paginate total="\${${propertyName}Count}" domainBean="${className}"/>
+            <filterpane:filterButton text="Seleziona un filtro" appliedText="Cambia il filtro"/>
+            <filterpane:isNotFiltered>Mostrati tutti i \${${propertyName}Count} records</filterpane:isNotFiltered>
+            <filterpane:isFiltered>Mostrati \${${propertyName}Count} records su \${${propertyName}Total}</filterpane:isFiltered>
+        </g:if>
+        <g:else>
+            <g:paginate total="\${${propertyName}Total}"/>
+        </g:else>
     </div>
-    <g:if test="\${application.usaExport}">
+    <filterpane:filterPane domain="${className}"/>
+
+    <g:if test="\${usaExport}">
         <div class="buttons">
             <export:formats/>
         </div>

@@ -52,24 +52,34 @@ grails.project.dependency.resolution = {
         //--compile - dependency that is needed at both compile-time and runtime. This is the most common case
         //--test - dependency that is only needed by the tests
         //--provided - dependency that is needed at compile-time but should not be packaged with the app (usually because it is provided by the container). An example is the Servlet API
-        runtime 'mysql:mysql-connector-java:5.1.25'
+        runtime 'mysql:mysql-connector-java:5.1.27'
     }// fine della closure dependencies
 
     plugins {
-        //--sempre presenti
-        build ":tomcat:$grailsVersion"
-        runtime ":hibernate:$grailsVersion"
-        build ":release:2.2.1"
-        compile ':cache:1.0.1'
-        runtime ":resources:1.2"
+        // plugins for the build system only
+        build ':tomcat:7.0.52.1'
+        build ":release:3.0.1"
+
+        // plugins for the compile step
+        compile ":scaffolding:2.0.3"
+        compile ':cache:1.1.1'
+
+        // plugins needed at runtime but not for compilation
+        runtime ':hibernate:3.6.10.10'
+        runtime ":resources:1.2.7"
 
         // opzionali
-        compile ":export:1.5"
-        compile ":quartz:1.0-RC9"
+        compile ":quartz:1.0.1"
         compile ":mail:1.0.1"
+        compile ":export:1.5"
+        runtime ":filterpane:2.3.3"
         compile ":csv:0.3.1"    //@todo da spostare in algos
 
         //--plugin della algos
+        compile ":algoslib:latest.integration"
+        compile ":algospref:latest.integration"
+        compile ":algosvers:latest.integration"
+        compile ":algoslogo:latest.integration"
         compile ":algos:latest.integration"
     }// fine della closure plugins
 

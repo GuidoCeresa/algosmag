@@ -20,12 +20,12 @@ class Articolo {
     String codice
     String nome
     String descrizione
-    int prezzoAcquisto
-    int prezzoVendita
+    BigDecimal prezzoAcquisto
+    BigDecimal prezzoVendita
     Unita unitaDiMisura = null
-    int quantita
-    int scortaMinima
-    boolean sottoscorta
+    BigDecimal quantita
+    BigDecimal scortaMinima
+    Boolean sottoscorta
     String note
 
     /**
@@ -100,6 +100,22 @@ class Articolo {
     } // end of def beforeUpdate
 
     /**
+     * regola la variabile sottoscorta
+     * in funzione della scortaMinima
+     */
+    def regolaSottoscorta() {
+        if (quantita && scortaMinima) {
+            if (quantita < scortaMinima) {
+                sottoscorta = true
+            } else {
+                sottoscorta = false
+            }// fine del blocco if-else
+        } else {
+            sottoscorta = false
+        }// fine del blocco if-else
+    } // fine del metodo
+
+    /**
      * metodo chiamato automaticamente da Grails
      * prima di cancellare un record
      */
@@ -118,6 +134,7 @@ class Articolo {
      * dopo aver creato un nuovo record
      */
     def afterInsert = {
+        regolaSottoscorta()
     } // end of def beforeInsert
 
     /**
@@ -125,6 +142,7 @@ class Articolo {
      * dopo aver registrato un record esistente
      */
     def afterUpdate = {
+        regolaSottoscorta()
     } // end of def beforeUpdate
 
     /**

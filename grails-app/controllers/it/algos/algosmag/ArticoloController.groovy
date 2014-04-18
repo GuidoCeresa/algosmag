@@ -15,7 +15,9 @@ package it.algos.algosmag
 
 import it.algos.algos.ImportService
 import it.algos.algos.TipoDialogo
+import it.algos.algospref.Pref
 import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
+import org.grails.plugin.filterpane.FilterPaneUtils
 import org.springframework.dao.DataIntegrityViolationException
 
 import javax.swing.*
@@ -26,41 +28,86 @@ class ArticoloController {
 
     // utilizzo di un service con la businessLogic per l'elaborazione dei dati
     // il service viene iniettato automaticamente
+    def filterPaneService
     def exportService
-    def logoService
     def eventoService
-    def importService
+    def logoService
     def importaService
 
+    // flag per usare il filtro/ricerca/selezione in questo controller
+    private static boolean USA_FILTER = true
+
+    // flag per usare l'export in questo controller
+    private static boolean USA_EXPORT = true
+
+    private static int MAX = 20
+
     def index() {
+        regolaFiltro()
+        regolaExport()
         redirect(action: 'list', params: params)
     } // fine del metodo
 
 
+    def regolaFiltro() {
+        def risultato = Pref.getBool('usaFilterArticolo')
+
+        if (risultato != null && risultato instanceof Boolean) {
+            USA_FILTER = risultato
+        } else {
+            if (servletContext.usaFilter != null && servletContext.usaFilter instanceof Boolean) {
+                USA_FILTER = servletContext.usaFilter
+            }// fine del blocco if
+        }// fine del blocco if-else
+    } // fine del metodo
+
+    def regolaExport() {
+        def risultato = Pref.getBool('usaExportArticolo')
+
+        if (risultato != null && risultato instanceof Boolean) {
+            USA_EXPORT = risultato
+        } else {
+            if (servletContext.usaExport != null && servletContext.usaExport instanceof Boolean) {
+                USA_EXPORT = servletContext.usaExport
+            }// fine del blocco if
+        }// fine del blocco if-else
+    } // fine del metodo
+
     def list(Integer max) {
-        params.max = Math.min(max ?: 100, 100)
+        redirect(action: 'filter', params: params)
+    } // fine del metodo
+
+    //--filtro di selezione e ricerca
+    def filter = {
+        if (!params.max) params.max = MAX
         ArrayList menuExtra
         ArrayList campiLista
-        def lista
         def campoSort
+        int recordsParziali
+        int recordsTotali
+        String titoloLista
+        String titoloListaFiltrata
 
         //--selezione dei menu extra
         //--solo azione e di default controller=questo; classe e titolo vengono uguali
         //--mappa con [cont:'controller', action:'metodo', icon:'iconaImmagine', title:'titoloVisibile']
         menuExtra = ['deleteAll', 'importa']
         // fine della definizione
+        params.menuExtra = menuExtra
 
         //--selezione delle colonne (campi) visibili nella lista
         //--solo nome e di default il titolo viene uguale
-        //--mappa con [campo:'nomeDelCampo', titolo:'titoloVisibile', sort:'ordinamento']
+        //--mappa con [campo:'nomeDelCampo', title:'titoloVisibile', sort:'ordinamento']
         campiLista = [
-                'categoria',
+                [campo: 'categoria', title: 'Cat'],
                 'codice',
                 'nome',
-                [campo: 'prezzoAcquisto', titolo: 'Acquisto'],
-                [campo: 'prezzoVendita', titolo: 'Vendita'],
-                [campo: 'unitaDiMisura', titolo: 'UdM'],
+                [campo: 'prezzoAcquisto', title: 'Costo'],
+                [campo: 'prezzoVendita', title: 'Prezzo'],
+                [campo: 'unitaDiMisura', title: 'UdM'],
                 'quantita',
+                [campo: 'scortaMinima', title: 'Scorta'],
+                'sottoscorta',
         ]// fine della definizione
 
         //--regolazione dei campo di ordinamento
@@ -81,23 +128,36 @@ class ArticoloController {
         }// fine del blocco if-else
 
         //--metodo di esportazione dei dati (eventuale)
-        export(params)
+        if (USA_EXPORT) {
+            export(params)
+        }// fine del blocco if
 
         //--selezione dei records da mostrare
         //--per una lista filtrata (parziale), modificare i parametri
         //--oppure modificare il findAllByInteroGreaterThan()...
-        lista = Articolo.findAll(params)
+        recordsParziali = filterPaneService.count(params, Articolo)
+        recordsTotali = Articolo.count()
+
+        //--calcola il numero di record
+        titoloLista = 'Elenco di ' + params.max + '/' + recordsParziali + ' records di ' + 'prova'
+        titoloListaFiltrata = 'Elenco di ' + params.max + '/' + recordsParziali + ' records filtrati di ' + 'prova'
 
         //--presentazione della view (list), secondo il modello
         //--menuExtra e campiLista possono essere nulli o vuoti
         //--se campiLista è vuoto, mostra tutti i campi (primi 8)
-        render(view: 'list', model: [
-                articoloInstanceList: lista,
-                articoloInstanceTotal: lista.size(),
-                menuExtra: menuExtra,
-                campiLista: campiLista],
-                params: params)
-    } // fine del metodo
+        render(view: 'index',
+                model: [articoloInstanceList : filterPaneService.filter(params, Articolo),
+                        articoloInstanceCount: recordsParziali,
+                        articoloInstanceTotal: recordsTotali,
+                        filterParams         : FilterPaneUtils.extractFilterParams(params),
+                        usaFilter            : USA_FILTER,
+                        usaExport            : USA_EXPORT,
+                        menuExtra            : menuExtra,
+                        titoloLista          : titoloLista,
+                        titoloListaFiltrata  : titoloListaFiltrata,
+                        campiLista           : campiLista,
+                        params               : params])
+    } // fine della closure
 
     //--metodo di esportazione dei dati
     //--funziona SOLO se il flag -usaExport- è true (iniettato e regolato in ExportBootStrap)
@@ -110,7 +170,7 @@ class ArticoloController {
         List fields = null
         Map parameters
 
-        if (exportService && servletContext.usaExport) {
+        if (exportService && USA_EXPORT) {
             if (params?.format && params.format != 'html') {
                 if (!records) {
                     records = Articolo.list(params)
@@ -193,7 +253,7 @@ class ArticoloController {
         }// fine del blocco if
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'articolo.label', default: 'Articolo'), articoloInstance.id])
-        redirect(action: 'show', id: articoloInstance.id)
+        redirect(action: 'list')
     } // fine del metodo
 
     def show(Long id) {
@@ -247,7 +307,7 @@ class ArticoloController {
         }// fine del blocco if e fine anticipata del metodo
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'articolo.label', default: 'Articolo'), articoloInstance.id])
-        redirect(action: 'show', id: articoloInstance.id)
+        redirect(action: 'list')
     } // fine del metodo
 
     def delete(Long id) {
