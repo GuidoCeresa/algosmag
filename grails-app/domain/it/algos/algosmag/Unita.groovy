@@ -48,7 +48,7 @@ class Unita {
      * valore di testo restituito per una istanza della classe
      */
     String toString() {
-        return sigla
+        return nome
     } // end of toString
 
     /**

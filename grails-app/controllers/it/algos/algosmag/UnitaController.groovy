@@ -62,7 +62,7 @@ class UnitaController {
         export(params)
 
         //--selezione dei records da mostrare
-        lista = Unita.findAll(params)
+        lista = Unita.list(params)
 
         //--presentazione della view (list), secondo il modello
         render(view: 'list', model: [unitaInstanceList: Unita.list(params), unitaInstanceTotal: Unita.count(), campiLista: campiLista], params: params)
