@@ -139,8 +139,8 @@ class ArticoloController {
         recordsTotali = Articolo.count()
 
         //--calcola il numero di record
-        titoloLista = 'Elenco di ' + params.max + '/' + recordsParziali + ' records di ' + 'prova'
-        titoloListaFiltrata = 'Elenco di ' + params.max + '/' + recordsParziali + ' records filtrati di ' + 'prova'
+        titoloLista = 'Elenco di ' + params.max + '/' + recordsParziali + ' records di ' + 'articoli'
+        titoloListaFiltrata = 'Elenco di ' + params.max + '/' + recordsParziali + ' records filtrati di ' + 'articoli'
 
         //--presentazione della view (list), secondo il modello
         //--menuExtra e campiLista possono essere nulli o vuoti
