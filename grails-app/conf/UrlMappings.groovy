@@ -21,6 +21,7 @@ class UrlMappings {
 //		"/"(view:"/index")
         "/"(controller: 'Articolo', action: 'list')
         "/home"(view: "/index")
+        "/gac"(view:"/gac")
         "500"(view: '/error')
 
     } // end of static mapping

@@ -110,9 +110,11 @@
 
     <div id="controller-list" role="navigation">
         <h2>Moduli disponibili:</h2>
-            <li class="controller"><g:link controller="Categoria">Categorie merceologiche</g:link></li>
-            <li class="controller"><g:link controller="Unita">Unità di misura</g:link></li>
-            <li class="controller"><g:link controller="Articolo">Articoli di magazzino</g:link></li>
+        <ul>
+            <g:each var="c" in="${grailsApplication.controllerClasses.findAll { it.fullName != 'grails.plugin.databasemigration.DbdocController' }}">
+                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.getName()}</g:link></li>
+            </g:each>
+        </ul>
     </div>
 </div>
 </body>

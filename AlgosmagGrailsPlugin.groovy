@@ -3,7 +3,7 @@
 //
 class AlgosmagGrailsPlugin {
     // the plugin version
-    def version = "0.17"
+    def version = "0.18"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.2.3 > *"
     // the other plugins this plugin depends on
