@@ -13,7 +13,11 @@
 
 package it.algos.algosmag
 
+import it.algos.algospref.Pref
+import it.algos.algos.LibAlgos
+import it.algos.algoslib.LibGrails
 import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
+import org.grails.plugin.filterpane.FilterPaneUtils
 import org.springframework.dao.DataIntegrityViolationException
 
 class UnitaController {
@@ -22,24 +26,126 @@ class UnitaController {
 
     // utilizzo di un service con la businessLogic per l'elaborazione dei dati
     // il service viene iniettato automaticamente
+    def filterPaneService
     def exportService
-    def logoService
     def eventoService
+    def logoService
 
+    // flag per usare il filtro/ricerca/selezione in questo controller
+    private static boolean USA_FILTER = true
+
+    // flag per usare l'export in questo controller
+    private static boolean USA_EXPORT = true
+
+    private static int MAX = 20
 
     def index() {
+        regolaFiltro()
+        regolaExport()
         redirect(action: 'list', params: params)
     } // fine del metodo
 
+    /**
+     * Regola un flag (nei params) per mostrare o meno una finestra/dialogo
+     * di ricerca/selezione/filtro dei records
+     * Di default il flag usaFilter, è true
+     *
+     * Può essere disabilitato in maniera dinamica,
+     * senza avviare/riavviare l'applicazione,
+     * solo per questo controller,
+     * creando nelle Pref una preferenza specifica solo per questo controller
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * solo per questo controller
+     * cancellando il corpo di questo metodo
+     * e regolando la variabile statica della classe
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * per tutta l'applicazione,
+     * modificando il parametro servletContext.usaFilter,
+     * contenuto nella classe FilterBootStrap
+     *
+     * (queste note si possono cancellare e rileggere nel file.txt README)
+     */
+    def regolaFiltro() {
+        def risultato = Pref.getBool("usaFilterUnita")
+
+        if (risultato != null && risultato instanceof Boolean) {
+            USA_FILTER = risultato
+        } else {
+            if (servletContext.usaFilter != null && servletContext.usaFilter instanceof Boolean) {
+                USA_FILTER = servletContext.usaFilter
+            }// fine del blocco if
+        }// fine del blocco if-else
+    } // fine del metodo
+
+    /**
+     * Regola un flag per mostrare o meno una finestra/dialogo
+     * di ricerca/selezione/filtro dei records
+     * Di default il flag usaExport, è true
+     *
+     * Può essere disabilitato in maniera dinamica,
+     * senza avviare/riavviare l'applicazione,
+     * solo per questo controller,
+     * creando nelle Pref una preferenza specifica solo per questo controller
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * solo per questo controller
+     * cancellando il corpo di questo metodo
+     * e regolando la variabile statica della classe
+     *
+     * Può essere disabilitato in maniera statica,
+     * avviando/riavviando l'applicazione,
+     * per tutta l'applicazione,
+     * modificando il parametro servletContext.usaExport,
+     * contenuto nella classe ExportBootStrap
+     *
+     * (queste note si possono cancellare e rileggere nel file.txt README)
+     */
+    def regolaExport() {
+        def risultato = Pref.getBool("usaExportUnita")
+
+        if (risultato != null && risultato instanceof Boolean) {
+            USA_EXPORT = risultato
+        } else {
+            if (servletContext.usaExport != null && servletContext.usaExport instanceof Boolean) {
+                USA_EXPORT = servletContext.usaExport
+            }// fine del blocco if
+        }// fine del blocco if-else
+    } // fine del metodo
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        def lista
+        redirect(action: 'filter', params: params)
+    } // fine del metodo
+
+    //--filtro di selezione e ricerca
+    def filter = {
+        if (!params.max) params.max = MAX
+        ArrayList menuExtra
+        ArrayList campiLista
         def campoSort
+        int recordsParziali
+        int recordsTotali
+        String titoloLista
+        String titoloListaFiltrata
+
+        //--selezione dei menu extra
+        //--solo azione e di default controller=questo; classe e titolo vengono uguali
+        //--mappa con [cont:'controller', action:'metodo', icon:'iconaImmagine', title:'titoloVisibile']
+        menuExtra = []
+        params.menuExtra = menuExtra
+        // fine della definizione
 
         //--selezione delle colonne (campi) visibili nella lista
-        def campiLista = [
-        ]// fine della definizione
+        //--solo nome e di default il titolo viene uguale
+        //--mappa con [campo:'nomeDelCampo', title:'titoloVisibile', sort:'ordinamento']
+        //--se vuoto, mostra i primi n (stabilito nel templates:scaffoldinf:list)
+        //--    nell'ordine stabilito nella constraints della DomainClass
+        campiLista = []
+        // fine della definizione
 
         //--regolazione dei campo di ordinamento
         //--regolazione dei parametri di ordinamento
@@ -58,14 +164,35 @@ class UnitaController {
             params.order = 'asc'
         }// fine del blocco if-else
 
-        //--metodo di esportazione dei dati
-        export(params)
+        //--metodo di esportazione dei dati (eventuale)
+        if (USA_EXPORT) {
+            export(params)
+        }// fine del blocco if
 
         //--selezione dei records da mostrare
-        lista = Unita.list(params)
+        //--per una lista filtrata (parziale), appare il dialogo
+        recordsParziali = filterPaneService.count(params, Unita)
+        recordsTotali = Unita.count()
 
-        //--presentazione della view (list), secondo il modello
-        render(view: 'list', model: [unitaInstanceList: Unita.list(params), unitaInstanceTotal: Unita.count(), campiLista: campiLista], params: params)
+        //--calcola il numero di record
+        titoloLista = "Elenco di " + params.max + "/" + recordsParziali + " records di unita"
+        titoloListaFiltrata = "Elenco di " + params.max + "/" + recordsParziali + " records filtrati di unita"
+
+        //--presentazione della view (index), secondo il modello
+        //--menuExtra e campiLista possono essere nulli o vuoti
+        //--se campiLista è vuoto, mostra tutti i campi (primi 12)
+        render(view: 'index',
+                model: [unitaInstanceList  : filterPaneService.filter(params, Unita),
+                        unitaInstanceCount : recordsParziali,
+                        unitaInstanceTotal : recordsTotali,
+                        filterParams       : FilterPaneUtils.extractFilterParams(params),
+                        usaFilter          : USA_FILTER,
+                        usaExport          : USA_EXPORT,
+                        menuExtra          : menuExtra,
+                        titoloLista        : titoloLista,
+                        titoloListaFiltrata: titoloListaFiltrata,
+                        campiLista         : campiLista,
+                        params             : params])
     } // fine del metodo
 
     //--metodo di esportazione dei dati
@@ -79,7 +206,7 @@ class UnitaController {
         List fields = null
         Map parameters
 
-        if (exportService && servletContext.usaExport) {
+        if (exportService && USA_EXPORT) {
             if (params?.format && params.format != 'html') {
                 if (!records) {
                     records = Unita.list(params)
@@ -113,11 +240,15 @@ class UnitaController {
         }// fine del blocco if
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'unita.label', default: 'Unita'), unitaInstance.id])
-        redirect(action: 'show', id: unitaInstance.id)
+        redirect(action: 'list')
     } // fine del metodo
 
     def show(Long id) {
         def unitaInstance = Unita.get(id)
+        boolean usaSpostamento = true
+        if (FilterPaneUtils.extractFilterParams(params)) {
+            usaSpostamento = false
+        }// fine del blocco if
 
         if (!unitaInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'unita.label', default: 'Unita'), id])
@@ -125,7 +256,10 @@ class UnitaController {
             return
         }// fine del blocco if e fine anticipata del metodo
 
-        [unitaInstance: unitaInstance]
+        render(view: 'show',
+                model: [unitaInstance : unitaInstance,
+                        usaSpostamento: usaSpostamento,
+                        params        : params])
     } // fine del metodo
 
     def edit(Long id) {
@@ -167,7 +301,7 @@ class UnitaController {
         }// fine del blocco if e fine anticipata del metodo
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'unita.label', default: 'Unita'), unitaInstance.id])
-        redirect(action: 'show', id: unitaInstance.id)
+        redirect(action: 'list')
     } // fine del metodo
 
     def delete(Long id) {
@@ -187,6 +321,32 @@ class UnitaController {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'unita.label', default: 'Unita'), id])
             redirect(action: 'show', id: id)
         }// fine del blocco catch
+    } // fine del metodo
+
+    def moveFirst() {
+        params.id = LibAlgos.primo(getClasse())
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def movePrec() {
+        long pos = params.long('id')
+        params.id = LibAlgos.prec(getClasse(), pos)
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def moveSucc() {
+        long pos = params.long('id')
+        params.id = LibAlgos.suc(getClasse(), pos)
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def moveLast() {
+        params.id = LibAlgos.ultimo(getClasse())
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    private Class getClasse() {
+        return LibGrails.getDomainClazz(grailsApplication, 'Unita')
     } // fine del metodo
 
 } // fine della controller classe

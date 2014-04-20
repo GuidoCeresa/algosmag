@@ -14,6 +14,8 @@
 package ${packageName}
 
 import it.algos.algospref.Pref
+import it.algos.algos.LibAlgos
+import it.algos.algoslib.LibGrails
 import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
 import org.grails.plugin.filterpane.FilterPaneUtils
 import org.springframework.dao.DataIntegrityViolationException
@@ -243,6 +245,10 @@ class ${className}Controller {
 
     def show(Long id) {
         def ${propertyName} = ${className}.get(id)
+        boolean usaSpostamento = true
+        if (FilterPaneUtils.extractFilterParams(params)) {
+            usaSpostamento = false
+        }// fine del blocco if
 
         if (!${propertyName}) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), id])
@@ -250,7 +256,10 @@ class ${className}Controller {
             return
         }// fine del blocco if e fine anticipata del metodo
 
-        [${propertyName}: ${propertyName}]
+        render(view: 'show',
+                model: [${propertyName} : ${propertyName},
+                        usaSpostamento: usaSpostamento,
+                        params        : params])
     } // fine del metodo
 
     def edit(Long id) {
@@ -312,6 +321,32 @@ class ${className}Controller {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), id])
             redirect(action: 'show', id: id)
         }// fine del blocco catch
+    } // fine del metodo
+
+    def moveFirst() {
+        params.id = LibAlgos.primo(getClasse())
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def movePrec() {
+        long pos = params.long('id')
+        params.id = LibAlgos.prec(getClasse(), pos)
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def moveSucc() {
+        long pos = params.long('id')
+        params.id = LibAlgos.suc(getClasse(), pos)
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def moveLast() {
+        params.id = LibAlgos.ultimo(getClasse())
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    private Class getClasse() {
+        return LibGrails.getDomainClazz(grailsApplication, '${className}')
     } // fine del metodo
 
 } // fine della controller classe

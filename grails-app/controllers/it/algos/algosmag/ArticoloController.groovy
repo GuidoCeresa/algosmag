@@ -14,7 +14,9 @@
 package it.algos.algosmag
 
 import it.algos.algos.ImportService
+import it.algos.algos.LibAlgos
 import it.algos.algos.TipoDialogo
+import it.algos.algoslib.LibGrails
 import it.algos.algospref.Pref
 import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
 import org.grails.plugin.filterpane.FilterPaneUtils
@@ -107,7 +109,7 @@ class ArticoloController {
                 [campo: 'unitaDiMisura', title: 'UdM'],
                 'quantita',
 //                [campo: 'scortaMinima', title: 'Scorta'],
-                'sottoscorta',
+'sottoscorta',
         ]// fine della definizione
 
         //--regolazione dei campo di ordinamento
@@ -258,6 +260,10 @@ class ArticoloController {
 
     def show(Long id) {
         def articoloInstance = Articolo.get(id)
+        boolean usaSpostamento = true
+        if (FilterPaneUtils.extractFilterParams(params)) {
+            usaSpostamento = false
+        }// fine del blocco if
 
         if (!articoloInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'articolo.label', default: 'Articolo'), id])
@@ -265,7 +271,10 @@ class ArticoloController {
             return
         }// fine del blocco if e fine anticipata del metodo
 
-        [articoloInstance: articoloInstance]
+        render(view: 'show',
+                model: [articoloInstance: articoloInstance,
+                        usaSpostamento  : usaSpostamento,
+                        params          : params])
     } // fine del metodo
 
     def edit(Long id) {
@@ -327,6 +336,32 @@ class ArticoloController {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'articolo.label', default: 'Articolo'), id])
             redirect(action: 'show', id: id)
         }// fine del blocco catch
+    } // fine del metodo
+
+    def moveFirst() {
+        params.id = LibAlgos.primo(getClasse())
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def movePrec() {
+        long pos = params.long('id')
+        params.id = LibAlgos.prec(getClasse(), pos)
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def moveSucc() {
+        long pos = params.long('id')
+        params.id = LibAlgos.suc(getClasse(), pos)
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    def moveLast() {
+        params.id = LibAlgos.ultimo(getClasse())
+        redirect(action: 'show', params: params)
+    } // fine del metodo
+
+    private Class getClasse() {
+        return LibGrails.getDomainClazz(grailsApplication, 'Articolo')
     } // fine del metodo
 
 } // fine della controller classe

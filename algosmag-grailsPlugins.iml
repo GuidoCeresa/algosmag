@@ -14,8 +14,8 @@
           <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslogo-0.26/grails-app/views" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/filterpane-2.3.3/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/filterpane-2.3.3/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/grails-app/views" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -32,18 +32,18 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/grails-app/jobs" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.26/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/grails-app/jobs" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algos-1.27/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslib-0.44">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslib-0.44/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslib-0.44/grails-app/i18n" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslib-0.45">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslib-0.45/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslib-0.45/grails-app/i18n" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslogo-0.26">
       <sourceFolder url="file://$USER_HOME$/.grails/2.3.7/projects/Magazzino/plugins/algoslogo-0.26/src/groovy" isTestSource="false" />

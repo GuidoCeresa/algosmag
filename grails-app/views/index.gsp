@@ -110,9 +110,11 @@
 
     <div id="controller-list" role="navigation">
         <h2>Moduli disponibili:</h2>
+        <ul>
             <li class="controller"><g:link controller="Categoria">Categorie merceologiche</g:link></li>
             <li class="controller"><g:link controller="Unita">Unità di misura</g:link></li>
             <li class="controller"><g:link controller="Articolo">Articoli di magazzino</g:link></li>
+        </ul>
     </div>
 </div>
 </body>

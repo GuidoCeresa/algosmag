@@ -137,6 +137,17 @@
         
     </ol>
     <g:form>
+        <g:if test="${usaSpostamento}">
+            <fieldset class="buttons">
+                <g:hiddenField name="id" value="${articoloInstance?.id}"/>
+                <g:link class="create" action="moveFirst">Primo record</g:link>
+                <g:link class="edit" action="movePrec" id="${articoloInstance?.id}">Precedente</g:link>
+                <g:link class="edit" action="moveSucc" id="${articoloInstance?.id}">Successivo</g:link>
+                <g:link class="create" action="moveLast">Ultimo record</g:link>
+            </fieldset>
+        </g:if>
+    </g:form>
+    <g:form>
         <fieldset class="buttons">
             <g:hiddenField name="id" value="${articoloInstance?.id}" />
             <g:link class="edit" action="edit" id="${articoloInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
