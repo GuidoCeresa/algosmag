@@ -102,7 +102,7 @@ class ArticoloController {
                 [campo: 'categoria', title: 'Cat'],
                 'codice',
                 'nome',
-                [campo: 'prezzoAcquisto', title: 'Acuisto'],
+                [campo: 'prezzoAcquisto', title: 'Acquisto'],
                 [campo: 'prezzoVendita', title: 'Vendita'],
                 [campo: 'unitaDiMisura', title: 'UdM'],
                 'quantita',

@@ -57,14 +57,22 @@ class ImportaService {
         }// fine del blocco if
         if (mappa.prezzoAcquisto) {
             prezzoAcquistoTxt = mappa.prezzoAcquisto
-            prezzoAcquisto = new BigDecimal(prezzoAcquistoTxt)
+            try { // prova ad eseguire il codice
+                prezzoAcquisto = new BigDecimal(prezzoAcquistoTxt)
+            } catch (Exception unErrore) { // intercetta l'errore
+                log.error unErrore
+            }// fine del blocco try-catch
             if (prezzoAcquisto) {
                 articolo.prezzoAcquisto = prezzoAcquisto
             }// fine del blocco if
         }// fine del blocco if
         if (mappa.prezzoVendita) {
             prezzoVenditaTxt = mappa.prezzoVendita
-            prezzoVendita = new BigDecimal(prezzoVenditaTxt)
+            try { // prova ad eseguire il codice
+                prezzoVendita = new BigDecimal(prezzoVenditaTxt)
+            } catch (Exception unErrore) { // intercetta l'errore
+                log.error unErrore
+            }// fine del blocco try-catch
             if (prezzoVendita) {
                 articolo.prezzoVendita = prezzoVendita
             }// fine del blocco if
@@ -72,14 +80,22 @@ class ImportaService {
         articolo.unitaDiMisura = findUnita(mappa)
         if (mappa.quantita) {
             quantitaTxt = mappa.quantita
-            quantita = new BigDecimal(quantitaTxt)
+            try { // prova ad eseguire il codice
+                quantita = new BigDecimal(quantitaTxt)
+            } catch (Exception unErrore) { // intercetta l'errore
+                log.error unErrore
+            }// fine del blocco try-catch
             if (quantita) {
                 articolo.quantita = quantita
             }// fine del blocco if
         }// fine del blocco if
         if (mappa.scortaMinima) {
             scortaMinimaTxt = mappa.scortaMinima
-            scortaMinima = new BigDecimal(scortaMinimaTxt)
+            try { // prova ad eseguire il codice
+                scortaMinima = new BigDecimal(scortaMinimaTxt)
+            } catch (Exception unErrore) { // intercetta l'errore
+                log.error unErrore
+            }// fine del blocco try-catch
             if (scortaMinima) {
                 articolo.scortaMinima = scortaMinima
             }// fine del blocco if
@@ -94,7 +110,17 @@ class ImportaService {
         if (mappa.note) {
             articolo.note = mappa.note
         }// fine del blocco if
-        def regisyto = articolo.save(flush: true)
+
+        //patch
+        if (!articolo.codice && articolo.nome && articolo.nome.size() > 2) {
+            articolo.codice = articolo.nome.substring(0, 3)
+        }// fine del blocco if
+
+        try { // prova ad eseguire il codice
+            def regisyto = articolo.save(flush: true)
+        } catch (Exception unErrore) { // intercetta l'errore
+            log.error unErrore
+        }// fine del blocco try-catch
         def stop
 //        fields = new DefaultGrailsDomainClass(Articolo.class).persistentProperties*.name
 //        if (fields) {
@@ -119,8 +145,14 @@ class ImportaService {
         }// fine del blocco if
 
         if (nomeCat) {
-            categoria = Categoria.findOrCreateByNome(nomeCat)
-            categoria.save(flush: true)
+            try { // prova ad eseguire il codice
+                categoria = Categoria.findByNome(nomeCat)
+            } catch (Exception unErrore) { // intercetta l'errore
+                log.error unErrore
+            }// fine del blocco try-catch
+            if (!categoria) {
+                new Categoria(nome: nomeCat).save(flush: true)
+            }// fine del blocco if
         }// fine del blocco if
 
         return categoria
@@ -135,8 +167,14 @@ class ImportaService {
         }// fine del blocco if
 
         if (siglaUni) {
-            unita = Unita.findOrCreateBySigla(siglaUni)
-            unita.save(flush: true)
+            try { // prova ad eseguire il codice
+                unita = Unita.findBySigla(siglaUni)
+            } catch (Exception unErrore) { // intercetta l'errore
+                log.error unErrore
+            }// fine del blocco try-catch
+            if (!unita) {
+                new Unita(sigla: siglaUni).save(flush: true)
+            }// fine del blocco if
         }// fine del blocco if
 
         return unita
